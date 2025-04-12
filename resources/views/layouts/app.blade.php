@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>theGrocery</title>
+    <title>Simpang5Grocery</title>
     
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
@@ -30,6 +30,7 @@
         }
     </style>
 </head>
+@stack('scripts')
 <body class="bg-white relative">
 
 @include('components.navbar')
