@@ -104,7 +104,7 @@
                                 <textarea id="message" name="message" rows="5" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-grocery-primary" required></textarea>
                             </div>
 
-                            <button type="submit" class="btn-primary w-full md:w-auto px-8">Send Message</button>
+                            <button type="submit" class="btn-primary w-full md:w-auto px-8 ">Send Message</button>
                         </form>
                     </div>
                 </div>
@@ -113,7 +113,14 @@
 
         {{-- Map Section --}}
         <div class="h-96 bg-gray-200 w-full">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!..." width="100%" height="100%" style="border:0;" allowfullscreen loading="lazy"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d997.0599054457174!2d95.3167217694786!3d5.547002999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x304037865f660db1%3A0x56fa712b6f274709!2sJl.%20Tengku%20Angkasa%20H.%20Abdullah%2C%20Ujong%20Rimba%2C%20Banda%20Aceh!5e0!3m2!1sen!2sid!4v1712827191006!5m2!1sen!2sid"
+                    width="100%"
+                    height="450"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
         </div>
     </main>
 @endsection
