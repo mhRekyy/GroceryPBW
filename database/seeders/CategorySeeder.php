@@ -9,7 +9,10 @@ class CategorySeeder extends Seeder
 {
     public function run(): void
     {
-        $categories = ['Vegetables', 'Fruits', 'Spices', 'Grains', 'Drinks'];
+        // Hapus semua data kategori lama agar tidak double
+        Category::truncate();
+
+        $categories = ['Fruits', 'Vegetables', 'Spices', 'Grains', 'Drinks'];
 
         foreach ($categories as $name) {
             Category::create(['name' => $name]);
