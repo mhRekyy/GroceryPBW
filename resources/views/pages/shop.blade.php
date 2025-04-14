@@ -51,38 +51,43 @@
         </div>
     </div>
 
-    <!-- Popup -->
-    <div id="product-popup" class="fixed inset-0 bg-black bg-opacity-5 hidden items-center justify-center z-50">
-        <div class="bg-white w-full max-w-4xl rounded-lg overflow-hidden relative shadow-lg">
+    <!-- Popup Detail Produk -->
+    <div id="product-popup" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+        <div class="bg-white w-full max-w-5xl rounded-lg shadow-lg relative p-6 grid md:grid-cols-2 gap-6">
             <button onclick="closePopup()" class="absolute top-3 right-4 text-xl font-bold text-gray-500 hover:text-gray-800">&times;</button>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 p-6">
-                <img id="popup-image" src="" alt="Product" class="w-full h-auto object-contain">
-                <div>
-                    <h2 id="popup-name" class="text-2xl font-bold text-gray-800 mb-2"></h2>
-                    <p id="popup-category" class="text-sm text-gray-500 mb-2"></p>
-                    <p id="popup-price" class="text-green-600 text-xl font-semibold mb-2"></p>
-                    <p id="popup-description" class="text-gray-700"></p>
+
+            <!-- Gambar -->
+            <div>
+                <img id="popup-image" src="" alt="Product" class="w-full h-auto object-contain mb-4">
+                <!-- Thumbnail tetap dummy -->
+                <div class="flex space-x-2">
+                    <img src="https://via.placeholder.com/60x40" class="w-16 h-16 object-cover border border-gray-200 rounded" />
+                    <img src="https://via.placeholder.com/60x40" class="w-16 h-16 object-cover border border-gray-200 rounded" />
                 </div>
+            </div>
+
+            <!-- Detail -->
+            <div>
+                <h2 id="popup-name" class="text-2xl font-bold text-gray-800 mb-2">Nama Produk</h2>
+                <p id="popup-description" class="text-gray-700 mb-4">Deskripsi Produk</p>
+                <span id="popup-price" class="text-green-600 text-2xl font-semibold">$0.00</span>
             </div>
         </div>
     </div>
-@endsection
 
-@push('scripts')
+    <!-- Script -->
     <script>
         function openPopup(product) {
-            document.getElementById('popup-image').src = product.image_url || 'https://via.placeholder.com/300';
             document.getElementById('popup-name').textContent = product.name;
-            document.getElementById('popup-price').textContent = '$' + parseFloat(product.price).toFixed(2);
-            document.getElementById('popup-category').textContent = product.category || '-';
-            document.getElementById('popup-description').textContent = product.description || 'No description available';
+            document.getElementById('popup-description').textContent = product.description;
+            document.getElementById('popup-image').src = product.image_url;
+            document.getElementById('popup-price').textContent = "$" + parseFloat(product.price).toFixed(2);
             document.getElementById('product-popup').classList.remove('hidden');
-            document.getElementById('product-popup').classList.add('flex');
         }
 
         function closePopup() {
             document.getElementById('product-popup').classList.add('hidden');
-            document.getElementById('product-popup').classList.remove('flex');
         }
+    @include('components.detail')
     </script>
-@endpush
+@endsection
