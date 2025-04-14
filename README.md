@@ -19,6 +19,25 @@ Grocery adalah aplikasi e-commerce sederhana berbasis Laravel yang memungkinkan 
 Ikuti langkah-langkah berikut untuk menjalankan proyek ini di lokal:
 
 ### 1. Clone Repository
-```bash
 git clone https://github.com/username/grocery.git
-cd grocery
+cd Grocery
+
+### 2. Instalasi dependensi Laravel menggunakan Composer
+composer install
+
+### 3. Instalasi Dependensi Frontend
+npm install
+
+### 4. Menjalankan Aplikasi
+Setelah semua dependensi terinstal, jalankan server Laravel:
+php artisan serve
+
+### 5. Jalankan Vite untuk mengkompilasi file frontend:
+npm run dev
+
+### 6. Akses aplikasi Anda di browser dengan membuka alamat berikut:
+http://localhost:8000
+
+### Catatan
+Pastikan Anda sudah menginstal PHP, Composer, Node.js, dan npm di sistem Anda sebelum menjalankan proyek ini.
+Gunakan php artisan migrate untuk menjalankan migrasi database jika diperlukan.
